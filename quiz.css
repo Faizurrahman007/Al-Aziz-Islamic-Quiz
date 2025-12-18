@@ -1,0 +1,247 @@
+:root {
+    --primary-color: #008080;
+    --text-dark: #333;
+    --text-muted: #666;
+    --bg-light: #ffffff;
+    --bg-page: #f4f7f6;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+body {
+    background-color: var(--bg-page);
+    color: var(--text-dark);
+}
+
+.header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1.5rem 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.search-container {
+    max-width: 500px;
+    margin: 12px auto 0;
+}
+
+#searchInput {
+    width: 100%;
+    padding: 12px 20px;
+    border-radius: 25px;
+    border: none;
+    font-size: 1rem;
+    outline: none;
+    direction: ltr;
+}
+
+#quiz-container {
+    padding: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.accordion-item {
+    background: var(--bg-light);
+    margin-bottom: 12px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    border-right: 5px solid var(--primary-color);
+}
+
+.accordion-header {
+    padding: 18px 15px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row-reverse;
+    /* Puts icon on left, wrapper on right */
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Wrapper to hold Number and Question together on the right */
+.question-wrapper {
+    display: flex;
+    flex-direction: row;
+    /* Natural RTL order */
+    direction: rtl;
+    text-align: right;
+    flex: 1;
+    gap: 8px;
+}
+
+.q-number {
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 1.1rem;
+    min-width: 30px;
+}
+
+.question-text {
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.toggle-icon {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    transition: transform 0.3s ease;
+    min-width: 25px;
+    text-align: center;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: #fafafa;
+}
+
+.accordion-item.active .accordion-content {
+    max-height: 1000px;
+}
+
+.accordion-item.active .toggle-icon {
+    transform: rotate(45deg);
+}
+
+.content-inner {
+    padding: 20px;
+    direction: rtl;
+    text-align: right;
+    border-top: 1px solid #eee;
+    line-height: 1.8;
+}
+
+.reference {
+    display: block;
+    margin-top: 15px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    direction: ltr;
+    text-align: left;
+    border-top: 1px dashed #ddd;
+    padding-top: 8px;
+}
+
+.islamic-footer {
+    position: relative;
+    background: url("https://images.unsplash.com/photo-1549640376-9f3c9f6d8c82") center/cover no-repeat;
+    color: #eaeaea;
+    overflow: hidden;
+    margin-top: 6rem;
+}
+
+.footer-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(0, 40, 40, 0.92),
+            rgba(0, 20, 20, 0.95));
+    z-index: 1;
+}
+
+.footer-container {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: auto;
+    padding: 4rem 2rem 3rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 3rem;
+}
+
+/* Brand */
+.footer-brand h2 {
+    font-size: 1.8rem;
+    color: #7fd1c7;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}
+
+.footer-brand p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #cfdede;
+}
+
+/* Links */
+.footer-links h3,
+.footer-quote h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: #9fe3d8;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 0.6rem;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #cfdede;
+    font-size: 0.95rem;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #7fd1c7;
+    padding-left: 6px;
+}
+
+/* Quote */
+.footer-quote .arabic {
+    font-size: 1.4rem;
+    font-family: "Amiri", "Scheherazade", serif;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+}
+
+.footer-quote span {
+    font-size: 0.85rem;
+    color: #cfdede;
+}
+
+/* Bottom */
+.footer-bottom {
+    position: relative;
+    z-index: 2;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1.5rem 2rem;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.25);
+}
+
+.footer-bottom p {
+    margin: 0.3rem 0;
+    font-size: 0.85rem;
+    color: #cfdede;
+}
+
+.footer-bottom .credits strong {
+    color: #7fd1c7;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .footer-container {
+        text-align: center;
+    }
+}
